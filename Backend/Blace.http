@@ -1,0 +1,70 @@
+@apip = http://localhost:4000/products
+@apio = http://localhost:4000/orders
+
+GET {{apip}}
+
+###
+POST {{apip}}
+Content-Type: application/json
+
+{
+    "Name":"Chocolate",
+    "Category":"Candy",
+    "UnitPrice":"10",
+    "Active":"true"
+}
+###
+GET {{apip}}/61411be94fb5db51e6b5fdd9
+###
+PUT {{apip}}/61411be94fb5db51e6b5fdd9
+Content-Type: application/json
+
+{
+    "Name":"Chocolate",
+    "Category":"Candy",
+    "UnitPrice":"20",
+    "Active":"false"
+}
+###
+DELETE {{apip}}/61411be94fb5db51e6b5fdd9
+
+
+
+
+###
+GET {{apio}}
+
+###
+GET {{apio}}/6141326cdbdb310d5c2f7598
+
+###
+POST {{apio}}
+Content-Type: application/json
+
+{
+    "OrderNumber":2,
+    "Status":"Pending",
+    "date":"21-06-2021",
+    "Customer":"Joe Baker",
+    "TaxesAmounts":58.2,
+    "TotalTaxes":48.5,
+    "TotalAmount":15.23,
+    "ListOfOrderItems":["1","2","3"]
+}
+
+###
+PUT {{apio}}/614204e24f20e0b1a6ff662e
+Content-Type: application/json
+
+{
+    "OrderNumber":2,
+    "Status":"Pending",
+    "date":"21-06-2021",
+    "Customer":"Joe Smith",
+    "TaxesAmounts":58.2,
+    "TotalTaxes":48.5,
+    "TotalAmount":15.23,
+    "ListOfOrderItems":["1","2","3"]
+}
+###
+DELETE {{apio}}/614204c24f20e0b1a6ff6628
